@@ -9,10 +9,10 @@ import java.util.Scanner;
 import Estrutura.ListaOrdenada;
 
 public class PesquisarContatos extends ListaOrdenada {
-	
-	
+
+
 	/**
-	 * Metodo pesquisar incompleto
+	 * Metodo pesquisar
 	 * O metodo percorre todo o arquivo de registro
 	 * se o nome digitado é igual a linha
 	 * o metodo mostra na tela
@@ -30,36 +30,23 @@ public class PesquisarContatos extends ListaOrdenada {
 
 		System.out.println("Digite um nome");
 		String digita = sc.next();
-		
+
 		while ((showReg = br.readLine()) != null) {
-			
-			if(showReg == digita){
+
+			if(showReg.equalsIgnoreCase(digita)){
 				System.out.println("Contatos encontrados: " + showReg);
 				System.out.println("Voce deseja ver mais contatos?");
 				digita = sc.next().toUpperCase();
-				
-			if(digita != showReg){
-				System.out.println("SUCESSO");
-			}
-				
-			}
-			
-			/*else {
-				System.out.println("Contato nao existe, deseja criar um novo?");
-				digita = sc.next().toUpperCase();
-				
+
 				if(digita.equals("SIM")){
-					AdicionarContato ac = new AdicionarContato();
-					ac.metodoAdicionar();
-					break;
+					PesquisarContatos pc = new PesquisarContatos();
+					pc.metodoPesquisar();
 				}
-				else{break;}
-			}*/
-			
-		}
-		
-		
-		
+
+			}
+
+		}	
 
 	}
+
 }

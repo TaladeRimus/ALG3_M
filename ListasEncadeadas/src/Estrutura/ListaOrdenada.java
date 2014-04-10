@@ -64,7 +64,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		lista.insert(new Nodo<String>("Raffael"));
 		lista.insert(new Nodo<String>("Rafael"));
 		lista.insert(new Nodo<String>("Raphael"));
-
+		
 
 		lista.print();
 		 

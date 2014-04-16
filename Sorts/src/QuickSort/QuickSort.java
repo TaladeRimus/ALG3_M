@@ -18,6 +18,8 @@ public class QuickSort {
 	//Declaracao das variaveis
 	private static int[] vetor;
 	private static int tamVetor;
+	private static int comparacoes;
+	private static int trocas;
 	private static Scanner sc = new Scanner(System.in);
 
 
@@ -41,15 +43,14 @@ public class QuickSort {
 		System.out.println("Comecando o Quick Sort");
 		quick_sort(vetor, 0 ,vetor.length - 1);
 
-		
-		System.out.println("\n\n\n");
-		System.out.println("Vetor depois do Quick Sort");
-
+	
 		//Mostra o vetor apos o sort
 		for (int i = 0; i < vetor.length; i++) {
-			System.out.println(vetor[i]);
+			System.out.print("[" + vetor[i] + "]" + "  ");
 		}
-
+		
+		System.out.println("\n" + "Numero de comparacoes: "+ comparacoes);
+		System.out.println("\n" + "Numero de trocas: " + trocas);
 	}
 
 
@@ -74,10 +75,12 @@ public class QuickSort {
 			//enquanto l for menor que h e o vetor na posicao l for menor que aux, valor de low é acrescentado
 			while( (low < high) && (vetor[low] < aux) ){
 				low++;
+				comparacoes++;
 			}
 			//enquanto l for menor que h e o vetor na posicao h for maior que aux, valor de high é decrementado
 			while( (low < high) && (vetor[high] > aux)){
 				high--;
+				comparacoes++;
 			}
 			
 			
@@ -86,9 +89,10 @@ public class QuickSort {
 				int aux2 = vetor[low];
 				vetor[low] = vetor[high];
 				vetor[high] = aux2;
+				trocas++;
 			}
 
-
+			comparacoes++;
 			
 		}
 			//se o valor de high for menor que o valor de low, high recebe o valor de low e low recebe valor de high
@@ -96,6 +100,7 @@ public class QuickSort {
 				int aux2 = high;
 				high = low;
 				low = aux2;
+				trocas++;
 			}
 			
 			//chamada do metodo colocando o vetor e os valores iniciais e finais de low

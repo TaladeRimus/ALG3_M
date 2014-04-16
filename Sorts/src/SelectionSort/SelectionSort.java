@@ -22,6 +22,8 @@ public class SelectionSort {
 	private static int[] vetor;
 	private static int[] vetorSort;
 	private static int tamVetor;
+	private static int comparacoes;
+	private static int trocas;
 	private static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
@@ -43,12 +45,16 @@ public class SelectionSort {
 		
 		for (int i : vetorSort ){
 			
-			System.out.print("[" + i + "]" + " - ");
+			System.out.print("[" + i + "]" + "  ");
 			
 		}
 		
+		System.out.println("\n" + "Numero de comparacoes: " + comparacoes);
+		System.out.println("\n " + "Numero de trocas: " + trocas);
+		
 		
 	}
+	
 	
 	
 	public static int[] selectionSort(int[] vet){
@@ -62,26 +68,27 @@ public class SelectionSort {
 				if(vet[j] < vet[indice]){
 					
 					indice = j;
-					
+					trocas++;
+
 				}
 				
+				comparacoes++;
+			
 			}
 			
 			int menorNumero = vet[indice];
 			vet[indice] = vet[i];
 			vet[i] = menorNumero;
 			
+			trocas++;
+			comparacoes++;
 			
 		}
 		
 		return vet;
 		
-		
-		
+				
 	}
 	
-	
-	
-	
-	
+
 }

@@ -17,12 +17,14 @@ public class Menu {
 	
 	private static Scanner sc = new Scanner(System.in);
 	private static String opc;
+	private static SelectionSort ss = new SelectionSort();
+	private static QuickSort qs = new QuickSort();
 	
 	public static void main(String[] args) {
 		
 		do {
 			
-			System.out.println("Digite um opcao \n"+
+			System.out.println("\nDigite uma opcao \n"+
 							   "SELECTION \n" +
 						       "QUICK \n" +
 							   "SAIR \n");
@@ -50,11 +52,11 @@ public class Menu {
 		
 		switch (ts) {
 		case QUICK:
-			QuickSort.main(null);
+			qs.executaQuick();
 			break;
 			
 		case SELECTION:
-			SelectionSort.main(null);
+			ss.executaSelection();
 			break;
 					
 		case SAIR:

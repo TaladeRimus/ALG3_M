@@ -23,7 +23,7 @@ public class QuickSort {
 	private static Scanner sc = new Scanner(System.in);
 
 
-	public static void main(String[] args) {
+	public void executaQuick() {
 
 		//Define o tamanho do vetor
 		System.out.println("Digite o tamanho do vetor: ");
@@ -50,7 +50,7 @@ public class QuickSort {
 		}
 		
 		System.out.println("\n" + "Numero de comparacoes: "+ comparacoes);
-		System.out.println("\n" + "Numero de trocas: " + trocas);
+		System.out.println("\n" + "Numero de trocas: " + trocas + "\n");
 	}
 
 

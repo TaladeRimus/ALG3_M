@@ -25,8 +25,9 @@ public class SelectionSort {
 	private static int comparacoes;
 	private static int trocas;
 	private static Scanner sc = new Scanner(System.in);
+
 	
-	public static void main(String[] args) {
+	public void executaSelection(){
 		
 		System.out.println("Digite o tamanho do vetor");
 		tamVetor = sc.nextInt();
@@ -50,7 +51,8 @@ public class SelectionSort {
 		}
 		
 		System.out.println("\n" + "Numero de comparacoes: " + comparacoes);
-		System.out.println("\n " + "Numero de trocas: " + trocas);
+		System.out.println("\n " + "Numero de trocas: " + trocas + "\n");
+		
 		
 		
 	}
